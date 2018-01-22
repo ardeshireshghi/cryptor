@@ -21,6 +21,8 @@ const secret = 'MYS3cure@£S3cr3T';
 const cryptor = createCryptor(secret);
 
 const encryptedText = cryptor.encrypt('Some data to encrypt');
-const decryptedText = cryptor.decrypt(enryptedText);
+const decryptedText = cryptor.decrypt(enryptedText)
+  .then(originalText => console.log(originalText))
+  .catch(err => console.error('Decryption Error', err.message));
 ```
 
